@@ -5,7 +5,7 @@
 ### Download and Installation 
 * Download the file thank's to the github page. Or clone the project with the git link :
 ```shell
-$ git clone https://github.com/DvDC13/OCR.git
+$ git clone https://github.com/Ezotose-1/OCR.git
 ```
 
 
@@ -29,7 +29,7 @@ $ ./ocr_gui
 ### License
 ----
 Developped by Stack Overflow group's
-David Chemaly, Pierre Blaess, Pierre Crispi
+Pierre Blaess
 Languages : C
 Made for the Epita's 3rd semester project 
 @Promo2024
