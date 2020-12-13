@@ -1,0 +1,100 @@
+#! /bin/sh
+
+
+PROG=./perceptron-one-hidden-layer
+
+FULL_SET_LOOPS=5
+
+EPSILON=0.5
+
+CHAR_LOOP=10
+
+
+
+learning()
+{
+	letter=$1
+	number=$2
+
+	echo "Learning  ${number} (${letter})..."
+	./${PROG} letterTxt/${letter}_mat  ${number}   ${EPSILON}  ${CHAR_LOOP} > /dev/null 2>&1
+}
+
+
+testing()
+{
+	letter=$1
+	number=$2
+
+	echo -n "Testing with ${number} (${letter}): "; ./${PROG} letterTxt/${letter}_mat
+}
+
+
+while true
+do
+
+	count=0
+	while [ ${count} -lt ${FULL_SET_LOOPS} ]
+	do
+		learning A 0
+		learning B 1
+		learning C 2
+		learning D 3
+		learning E 4
+		learning F 5
+		learning G 6
+		learning H 7
+		learning K 10
+		learning L 11
+		learning M 12
+		learning N 13
+		learning O 14
+		learning P 15
+		learning Q 16
+		learning R 17
+		learning S 18
+		learning T 19
+		learning U 20
+		learning V 21
+		learning W 22
+		learning X 23
+		learning Y 24
+		learning Z 25
+
+		count=$((count + 1))
+	done
+
+	testing A
+	testing B
+	testing C
+	testing D
+	testing E
+	testing F
+	testing G
+	testing H
+	testing K
+	testing L
+	testing M
+	testing N
+	testing O
+	testing P
+	testing Q
+	testing R
+	testing S
+	testing T
+	testing U
+	testing V
+	testing W
+	testing X
+	testing Y
+	testing Z
+
+	sync
+
+	echo "restart in 3 sec."
+	sleep 1
+	echo "restart in 2 sec."
+	sleep 1
+	echo "restart in 1 sec."
+	sleep 1
+done
